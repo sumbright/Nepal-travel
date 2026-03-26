@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A JOURNEY TO NEPAL | 絶景と祈りのネパール6日間</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Shippori Mincho"', 'serif'],
+                        en: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            base: '#FAFAFA',   /* 全体の背景（ごく薄いグレー） */
+                            surface: '#FFFFFF',/* カード等の背景（白） */
+                            text: '#222222',   /* 視認性の高い濃い黒・グレー */
+                            muted: '#555555',  /* 補助テキスト用 */
+                            accent: '#8B2626', /* 祈りを象徴する深い赤 */
+                            gold: '#B0891D',   /* 品のあるゴールド */
+                            line: '#E5E7EB'    /* 繊細な罫線 */
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.brand.base');
+            color: theme('colors.brand.text');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.7;
+        }
+
+        .text-justify-custom { text-align: justify; text-justify: inter-ideograph; }
+        
+        /* スクロールアニメーション */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* タイムラインの罫線デザイン */
+        .timeline-border {
+            position: relative;
+        }
+        .timeline-border::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            bottom: 0;
+            left: 0.7rem;
+            width: 2px;
+            background-color: theme('colors.brand.line');
+        }
+        .timeline-last::before { display: none; }
+        
+        /* アイコン */
+        .icon-svg {
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body class="font-sans selection:bg-brand-gold selection:text-white">
+
+    <!-- ==========================================
+         HERO SECTION (表紙)
+         ※風景画像はここでのみ使用
+    =========================================== -->
+    <header class="relative w-full h-[85vh] flex flex-col justify-center items-center overflow-hidden bg-[#111]">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2074&auto=format&fit=crop" alt="Himalayas and Nepal Landscape" class="w-full h-full object-cover opacity-60 scale-105 transform origin-center transition-transform duration-[30s] ease-out hover:scale-100">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-brand-base"></div>
+        </div>
+        
+        <div class="relative z-10 w-full max-w-5xl mx-auto px-6 text-center mt-16 reveal active">
+            <p class="font-en text-white/90 tracking-[0.4em] uppercase text-xs md:text-sm mb-6 border-b border-white/40 pb-2 inline-block">The Ultimate Journey to Nepal</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold tracking-widest leading-[1.2] drop-shadow-2xl mb-8">
+                天空の祈り、<br>深淵なる古都。
+            </h1>
+            <div class="bg-black/50 backdrop-blur-md border border-white/20 px-8 py-5 rounded-sm inline-block shadow-xl">
+                <p class="font-en text-white text-xl md:text-2xl tracking-[0.2em] font-bold">2026.09.19 - 09.24</p>
+                <div class="w-10 h-px bg-brand-gold mx-auto my-3"></div>
+                <p class="text-white/90 text-sm font-bold tracking-widest uppercase">Kathmandu & Pokhara</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         CONCEPT
+    =========================================== -->
+    <section class="py-20 px-6 max-w-4xl mx-auto">
+        <div class="text-center reveal">
+            <h2 class="font-en text-3xl md:text-4xl text-brand-gold italic mb-5">Philosophy.</h2>
+            <h3 class="font-serif text-2xl md:text-3xl text-brand-text font-bold leading-tight mb-6 tracking-wide">
+                生と死の境界を歩き、大自然の静寂に溶け込む
+            </h3>
+            <div class="bg-brand-surface p-6 md:p-8 rounded-xl shadow-soft border border-brand-line text-justify-custom text-brand-muted text-sm md:text-base leading-loose font-medium">
+                ヒマラヤに抱かれた天空の桃源郷「ポカラ」で大自然の息吹に圧倒され、古都「カトマンズ」の河畔で、燃え盛る炎とともに肉体が自然へと還る「死」の光景を直視する。<br>
+                ネパールへの旅は、単なるリゾート観光ではありません。むき出しの祈りと混沌とした街の熱気が、あなたの日常の価値観を根本から揺さぶります。不要なアクティビティを削ぎ落とし、その地でしか得られない本質的な体験を味わうための、移動・滞在時間を緻密に計算した6日間の旅程です。
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ITINERARY (詳細なタイムスケジュール)
+    =========================================== -->
+    <section class="py-20 bg-white border-t border-brand-line">
+        <div class="max-w-5xl mx-auto px-4 md:px-8">
+            <div class="mb-12 border-b-2 border-brand-text pb-4 reveal">
+                <span class="font-en text-brand-gold tracking-widest text-sm font-bold uppercase block mb-1">Chapter 01</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-text">詳細タイムスケジュール</h2>
+                <p class="text-xs text-brand-muted mt-2 font-medium">※交通渋滞や天候により時間は前後する可能性があります。移動・滞在時間を現実的に考慮したプランです。</p>
+            </div>
+
+            <!-- DAY 1 -->
+            <div class="mb-16 reveal bg-brand-base p-6 md:p-8 rounded-xl border border-brand-line">
+                <div class="flex items-end gap-4 mb-8 border-b border-brand-line pb-3">
+                    <h3 class="font-en text-5xl text-brand-muted/40 font-bold leading-none">01</h3>
+                    <div>
+                        <p class="text-xs text-brand-gold font-bold tracking-widest uppercase mb-1">Sept 19, Sat</p>
+                        <h4 class="font-serif text-2xl font-bold text-brand-text">神々の棲む国へ</h4>
+                    </div>
+                </div>
+
+                <div class="space-y-0">
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-brand-text flex-shrink-0 mt-1 border-4 border-brand-base z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">11:25</span>
+                                <h5 class="font-bold text-brand-text text-lg">羽田空港（HND）出発</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                エア・インディア（AI307便）にて出発。【フライト時間：約9時間5分】
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">17:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">デリー（DEL）到着【トランジット】</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <p class="font-bold text-brand-accent mb-2">▶ 乗り継ぎ滞在時間：3時間45分（20:45発 AI211便）</p>
+                                インドに入国しないためビザは不要。広大なインディラ・ガンディー国際空港のトランジットエリアにて、ラウンジを利用したり、本場のインドカレーやチャイで長旅の疲れを癒やします。※乗り継ぎ用の保安検査があるため、免税店等での液体物の購入には注意。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border timeline-last">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent flex-shrink-0 mt-1 border-4 border-brand-base z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">22:45</span>
+                                <h5 class="font-bold text-brand-text text-lg">カトマンズ（KTM）到着・入国手続き</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>ビザ取得 (所要約30分):</strong> 入国審査場の手前にある専用端末で申請し、窓口で支払い（15日間 30USD）。お釣りが出ないトラブルを避けるため、<span class="text-brand-accent font-bold">細かい米ドル現金の持参</span>が鉄則です。</li>
+                                    <li><strong>通信 (所要約15分):</strong> 出口付近の「Ncell」カウンターでSIMを購入し設定を依頼。</li>
+                                    <li><strong>両替の極意:</strong> 空港の両替所はレートが悪いため最小限に。基本はクレジットカードを利用し、街中のATMでキャッシングするのが最もお得です。</li>
+                                </ul>
+                                <p class="mt-4 pt-3 border-t border-brand-line text-brand-text font-bold">【24:00頃】 手配済みの送迎車でタメル地区のホテルへ（移動時間：約30分）。速やかに休息を取ります。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="mb-16 reveal bg-brand-base p-6 md:p-8 rounded-xl border border-brand-line">
+                <div class="flex items-end gap-4 mb-8 border-b border-brand-line pb-3">
+                    <h3 class="font-en text-5xl text-brand-muted/40 font-bold leading-none">02</h3>
+                    <div>
+                        <p class="text-xs text-brand-gold font-bold tracking-widest uppercase mb-1">Sept 20, Sun</p>
+                        <h4 class="font-serif text-2xl font-bold text-brand-text">天空の桃源郷 ポカラの大自然</h4>
+                    </div>
+                </div>
+
+                <div class="space-y-0">
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-brand-text flex-shrink-0 mt-1 border-4 border-brand-base z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">08:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">カトマンズのホテル出発</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-3 rounded border border-brand-line shadow-sm">
+                                タクシーで国内線ターミナルへ移動（移動時間：約30分）。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">09:05</span>
+                                <h5 class="font-bold text-brand-text text-lg">カトマンズ発（国内線）</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                Yeti Airlines等で空路ポカラへ（09:30着）。【フライト時間：約25分】<br>
+                                <strong class="text-brand-accent">★重要:</strong> チェックイン時に<strong>「右側の窓側席」</strong>をリクエスト。天候が良ければヒマラヤ山脈の壮大なパノラマを堪能できます。到着後、タクシーでレイクサイドのホテルへ移動し荷物を預けます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">10:30</span>
+                                <h5 class="font-bold text-brand-text text-lg">国際山岳博物館 見学</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <span class="font-bold text-brand-text">【滞在時間：約1.5時間】</span><br>ヒマラヤ登山の歴史を学べる施設。日本人で初めてチベットに潜入した河口慧海コーナーやマナスル初登頂の装備など、日本の貢献の大きさを知ることができます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">13:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">大自然の驚異：滝と洞窟</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <span class="font-bold text-brand-text">【滞在時間：約1.5時間】</span><br>水が地下へ吸い込まれる大迫力の「地獄の滝（パタレ・チャンゴ）」を見学。その後、隣接する深く螺旋を描く「グプテシュワール・マハーデヴ洞窟（入場料100Rs）」を探索します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border timeline-last">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">16:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">ペワ湖 ボート遊覧 ＆ 夕日鑑賞</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <p class="mb-2"><span class="font-bold text-brand-text">【滞在時間：約2時間】</span><br>日が傾き始めた頃、手漕ぎボートに乗船し、湖の中心に浮かぶタル・バラヒ寺院へ参拝します。風が止めば、湖面に映る「逆さマチャプチャレ」に出会えます。</p>
+                                <p class="text-xs bg-gray-100 p-2 rounded text-brand-text">※ローカルルール: 乗船前に必ず貸出小屋でライフジャケット（10Rs）を借りて着用することが義務付けられています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 3 -->
+            <div class="mb-16 reveal bg-brand-base p-6 md:p-8 rounded-xl border border-brand-line">
+                <div class="flex items-end gap-4 mb-8 border-b border-brand-line pb-3">
+                    <h3 class="font-en text-5xl text-brand-muted/40 font-bold leading-none">03</h3>
+                    <div>
+                        <p class="text-xs text-brand-gold font-bold tracking-widest uppercase mb-1">Sept 21, Mon</p>
+                        <h4 class="font-serif text-2xl font-bold text-brand-text">ポカラの朝から古都の熱気へ</h4>
+                    </div>
+                </div>
+
+                <div class="space-y-0">
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-brand-text flex-shrink-0 mt-1 border-4 border-brand-base z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">08:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">レイクサイドで優雅な朝食</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <span class="font-bold text-brand-text">【滞在時間：約1.5時間】</span><br>あえて早起きの山登り（ご来光）はせず、湖畔のカフェでヒマラヤの澄んだ空気を感じながらゆっくりとコーヒーと朝食を楽しみ、優雅な朝の時間を贅沢に味わいます。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">09:30</span>
+                                <h5 class="font-bold text-brand-text text-lg">オールドバザール散策</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <span class="font-bold text-brand-text">【滞在時間：約1.5時間】</span><br>観光客向けのエリアを離れ、古いレンガ造りの街並みが残る旧市街へ。地元の活気ある市場を歩き、丘の上に建つビンドゥバシニ寺院を参拝します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">11:55</span>
+                                <h5 class="font-bold text-brand-text text-lg">ポカラ発 ✈️ カトマンズへ帰還</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-3 rounded border border-brand-line shadow-sm">
+                                国内線にてカトマンズへ（12:20着）。ホテルへチェックインし、ネパールの熱気渦巻く首都の街歩きを開始します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border timeline-last">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">14:30</span>
+                                <h5 class="font-bold text-brand-text text-lg">カトマンズ旧市街・王宮広場散策</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <p class="mb-3"><span class="font-bold text-brand-text">【滞在時間：約3.5時間】</span><br>スパイスと人々の熱気が交わる「アサン市場」を抜け、生き神様が住む「クマリの館」へ。そして世界遺産の<strong>「ダルバール広場」</strong>でネワール建築の精緻な木彫りを堪能します。</p>
+                                <div class="bg-gray-50 border-l-4 border-brand-gold p-3">
+                                    <p class="font-bold text-brand-text text-xs mb-1">💡 ダルバール広場 入場料の裏技</p>
+                                    <p class="text-xs">外国人の入場料は1,000ルピーと高額ですが、チケットカウンターで「パスポートと写真」を提示すると、滞在中何度でも無料で入場できる『マルチエントリーパス』を作成してくれます。知らなければ損をする必須ハックです。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 4 (最重要) -->
+            <div class="mb-16 reveal bg-[#FCF8F8] p-6 md:p-10 rounded-xl shadow-md border-2 border-brand-accent">
+                <div class="flex items-end gap-4 mb-8 border-b-2 border-brand-accent pb-2">
+                    <h3 class="font-en text-5xl text-brand-accent font-bold leading-none">04</h3>
+                    <div>
+                        <p class="text-xs text-brand-accent font-bold tracking-widest uppercase mb-1">Sept 22, Tue</p>
+                        <h4 class="font-serif text-2xl font-bold text-brand-text">生と死、祈りの真髄に触れる（最重要日）</h4>
+                    </div>
+                </div>
+
+                <div class="space-y-0">
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent flex-shrink-0 mt-1 border-4 border-[#FCF8F8] z-10 shadow-sm"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-accent">09:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">ネパール仏教の二大聖地</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <p class="mb-2"><span class="font-bold text-brand-text">【滞在時間：各約1.5時間 / 移動含む】</span></p>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>スワヤンブナート（入場料200Rs）：</strong> カトマンズを見下ろす丘に建つ最古の仏教寺院（モンキーテンプル）。385段の階段を登った先から見る市街の景色は圧巻です。</li>
+                                    <li><strong>ボダナート：</strong> チベット仏教の聖地であり、巨大な「ブッダ・アイ」が描かれたネパール最大のストゥーパ。マニ車を回しながら巡礼者と共に時計回りに祈りを捧げます。周辺のカフェでのランチがおすすめです。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent flex-shrink-0 mt-1 border-4 border-[#FCF8F8] z-10 shadow-sm"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-accent">14:30</span>
+                                <h5 class="font-bold text-brand-text text-lg">パシュパティナート（火葬場）と死生観</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-5 rounded border-2 border-[#FED7D7] shadow-sm">
+                                <p class="mb-3 font-bold text-brand-accent">【滞在時間：約3.5時間 / 入場料1,000Rs】<br>
+                                ※チケット裏手の高台で、公認の日本語ガイド（交渉で1,000〜2,000Rs）を依頼することを強く推奨します。深い宗教的背景の解説が得られます。</p>
+                                <p class="font-bold text-brand-text mb-2">▼ ガンガーへ続くバグマティ川と輪廻</p>
+                                ヒンドゥー教最大の聖地。ここには「富裕層用」「一般用」と、死後も明確な階級が存在します。観光客の目の前で、遺体が川で清められ、薪の上に置かれて約3時間かけて荼毘に付されます。<br><br>
+                                燃え盛る炎、立ち昇る煙、泣き崩れる遺族。そして灰となった肉体はそのまま川へ流されます。<strong>「肉体はただの器であり、自然へ還るもの」</strong>。死が日常の一部として剥き出しに存在する光景は、日本の死生観を根底から覆す、強烈で神聖な体験となります。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border timeline-last">
+                        <div class="w-6 h-6 rounded-full bg-brand-accent flex-shrink-0 mt-1 border-4 border-[#FCF8F8] z-10 shadow-sm"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-accent">18:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">祈りの儀式「アールティ」</h5>
+                            </div>
+                            <div class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <p class="mb-2">日が沈むと、川辺で火を使った幻想的な礼拝「アールティ」が始まります。僧侶たちが巨大な燭台を振りかざし、熱狂的な音楽とマントラが響き渡ります。</p>
+                                <p class="text-xs font-bold text-brand-accent bg-red-50 p-2 rounded">※厳重注意: 会場付近にいる白塗りで派手な格好をした修行僧（サドゥ）の写真を撮ると、高額なチップ（500Rs以上）を執拗に請求されるため安易な撮影は厳禁です。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 5-6 -->
+            <div class="reveal bg-brand-base p-6 md:p-8 rounded-xl border border-brand-line">
+                <div class="flex items-end gap-4 mb-8 border-b border-brand-line pb-3">
+                    <h3 class="font-en text-5xl text-brand-muted/40 font-bold leading-none">05-06</h3>
+                    <div>
+                        <p class="text-xs text-brand-gold font-bold tracking-widest uppercase mb-1">Sept 23-24</p>
+                        <h4 class="font-serif text-2xl font-bold text-brand-text">日常への帰還</h4>
+                    </div>
+                </div>
+
+                <div class="space-y-0">
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-brand-text flex-shrink-0 mt-1 border-4 border-brand-base z-10 shadow-sm"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">9/23 09:00</span>
+                                <h5 class="font-bold text-brand-text text-lg">タメル地区でお土産探し</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <span class="font-bold text-brand-text">【滞在時間：約2.5時間】</span><br>カトマンズの原宿「タメル地区」で最後のお土産探し。良質なイラムティー（紅茶）やヒマラヤ岩塩などを探します。価格交渉が面倒な方には、全商品値札付きで安心な「Aroma Garden」や、女性自立支援グループが手掛ける「Woven」のバッグが強くおすすめです。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">11:30</span>
+                                <h5 class="font-bold text-brand-text text-lg">空港へ移動 〜 14:40 カトマンズ発</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                カトマンズ特有の慢性的な交通渋滞を考慮し、早めに配車アプリ「Pathao」等を利用して空港へ向かいます（移動時間：約45分〜1時間）。AI216便にてデリーへ。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border pb-8">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-brand-text flex-shrink-0 mt-1 z-10"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">16:15</span>
+                                <h5 class="font-bold text-brand-text text-lg">デリー到着【トランジット】</h5>
+                            </div>
+                            <p class="text-sm font-medium text-brand-muted bg-white p-4 rounded border border-brand-line shadow-sm">
+                                <span class="font-bold text-brand-accent">【乗り継ぎ時間：5時間】</span><br>往路同様に入国はせず空港内で過ごします。免税店での最後のショッピングや、ラウンジでゆっくりと旅の記憶を反芻しながら日本へのフライト（21:15発 AI306便）を待ちます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:gap-6 timeline-border timeline-last">
+                        <div class="w-6 h-6 rounded-full bg-brand-text flex-shrink-0 mt-1 border-4 border-brand-base z-10 shadow-sm"></div>
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                                <span class="font-en text-xl font-bold text-brand-gold">9/24 08:45</span>
+                                <h5 class="font-bold text-brand-text text-lg">羽田空港（HND）到着</h5>
+                            </div>
+                            <p class="text-sm font-bold text-brand-text bg-white p-4 rounded border border-brand-line shadow-sm">
+                                お疲れ様でした。深く刻まれた記憶とともに、日常の世界へお帰りなさい。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOD CULTURE (ネパールの食文化)
+    =========================================== -->
+    <section class="py-24 bg-brand-base border-t border-brand-line">
+        <div class="max-w-5xl mx-auto px-6 lg:px-12">
+            <div class="mb-16 text-center border-b-2 border-brand-text pb-4 reveal">
+                <span class="font-en text-brand-gold tracking-widest text-sm font-bold uppercase block mb-1">Chapter 02</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-text">ネパールの食文化</h2>
+                <p class="text-xs md:text-sm text-brand-muted mt-2 font-medium">その土地の文化は、食事に表れる。必ず味わいたい4つの料理。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Dal Bhat -->
+                <div class="bg-white border border-brand-line rounded-xl overflow-hidden shadow-soft reveal">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=2000&auto=format&fit=crop" alt="Dal Bhat" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-baseline gap-2 mb-3 border-b border-brand-line pb-2">
+                            <span class="font-en text-3xl text-brand-gold font-bold">01</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-text">ダルバート</h3>
+                            <span class="text-xs font-en text-brand-muted">Dal Bhat</span>
+                        </div>
+                        <p class="text-sm text-brand-muted leading-relaxed font-medium text-justify-custom">
+                            ネパールの国民食であり、毎日食べても飽きない定食。「ダル（豆スープ）」と「バート（ご飯）」を中心に、野菜カレー（タルカリ）やスパイスの効いた漬物（アチャール）、青菜炒め（サグ）、豆せんべい（パパド）がワンプレートに乗っています。基本は<strong>「おかずもご飯もおかわり自由」</strong>。右手を使って混ぜ合わせながら手食に挑戦するのも一興です。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Momo -->
+                <div class="bg-white border border-brand-line rounded-xl overflow-hidden shadow-soft reveal" style="transition-delay: 0.1s;">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?q=80&w=2000&auto=format&fit=crop" alt="Momo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-baseline gap-2 mb-3 border-b border-brand-line pb-2">
+                            <span class="font-en text-3xl text-brand-gold font-bold">02</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-text">モモ</h3>
+                            <span class="text-xs font-en text-brand-muted">Momo</span>
+                        </div>
+                        <p class="text-sm text-brand-muted leading-relaxed font-medium text-justify-custom">
+                            チベット由来の「ネパール風蒸し餃子」。クミンやターメリックなどのスパイスが効いた鶏肉や水牛（バフ）のミンチが、モチモチの皮で包まれています。最大の特徴は、トマトやゴマ、コリアンダーなどをベースにしたピリ辛の特製アチャール（ソース）。これをたっぷりつけて食べると、ネパールビールの最高のお供になります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Thukpa / Chow Mein -->
+                <div class="bg-white border border-brand-line rounded-xl overflow-hidden shadow-soft reveal">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=2000&auto=format&fit=crop" alt="Thukpa and Chow Mein" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-baseline gap-2 mb-3 border-b border-brand-line pb-2">
+                            <span class="font-en text-3xl text-brand-gold font-bold">03</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-text">トゥクパ ＆ チョウメン</h3>
+                        </div>
+                        <p class="text-sm text-brand-muted leading-relaxed font-medium text-justify-custom">
+                            高地・ヒマラヤ地方でよく食べられるチベット系の麺料理。<strong>「トゥクパ」</strong>は野菜や肉の出汁が効いた優しい味のスープ麺で、冷えた朝や胃を休めたい時に最適です。一方<strong>「チョウメン」</strong>はネパール風の焼きそばで、スパイスとケチャップの絶妙なジャンク感が食欲をそそる屋台の定番メニューです。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jeri & Juju Dhau -->
+                <div class="bg-white border border-brand-line rounded-xl overflow-hidden shadow-soft reveal" style="transition-delay: 0.1s;">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <!-- ここを有効なスイーツ画像に修正しました -->
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=2000&auto=format&fit=crop" alt="Jeri and Juju Dhau" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-baseline gap-2 mb-3 border-b border-brand-line pb-2">
+                            <span class="font-en text-3xl text-brand-gold font-bold">04</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-text">ジェリ ＆ ズジュ・ダウ</h3>
+                        </div>
+                        <p class="text-sm text-brand-muted leading-relaxed font-medium text-justify-custom">
+                            <strong>「ジェリ」</strong>は小麦粉の生地を渦巻き状に揚げ、熱いうちに激甘のシロップにどっぷり漬け込んだスイーツ。口に入れるとシロップがジュワッと溢れ出します。また、素焼きの器に入った濃厚な<strong>「ズジュ・ダウ（王様のヨーグルト）」</strong>や、米粉を揚げたドーナツ「セルロティ」も街歩きの休憩にぴったりです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CAUTIONS & INFO (旅の教訓・超重要事項)
+    =========================================== -->
+    <section class="py-24 bg-white border-t border-brand-line">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 border-b-2 border-brand-text pb-4 reveal">
+                <span class="font-en text-brand-accent tracking-widest text-sm font-bold uppercase block mb-1">Cautions & Info</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-text">安全に遂行するための教訓</h2>
+                <p class="text-xs md:text-sm text-brand-accent font-bold mt-2">※ネパール旅行において、以下の項目は必ず把握してください。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Info 1 -->
+                <div class="bg-brand-base p-8 border border-brand-line rounded-xl shadow-sm reveal">
+                    <h3 class="font-serif text-xl font-bold text-brand-text mb-4 border-b border-brand-line pb-3 flex items-center gap-3">
+                        <span class="text-3xl">😷</span> 1. 大気汚染と絶対的な衛生管理
+                    </h3>
+                    <ul class="text-sm text-brand-muted leading-relaxed font-medium list-disc list-inside space-y-2 text-justify-custom">
+                        <li>カトマンズ盆地は排気ガスと土埃が滞留し、<strong>大気汚染が非常に深刻</strong>です。外出時はN95等の高機能マスクが必須。</li>
+                        <li>水道水は絶対に飲めません。うがいや歯磨きにも<strong>必ず購入したミネラルウォーターを使用</strong>してください。</li>
+                        <li>氷、カットフルーツ、生野菜（サラダ）は食中毒の原因になるため絶対NG。食事前の除菌ウェットティッシュは日本から多めに持参を。</li>
+                    </ul>
+                </div>
+
+                <!-- Info 2 -->
+                <div class="bg-brand-base p-8 border border-brand-line rounded-xl shadow-sm reveal" style="transition-delay: 0.1s;">
+                    <h3 class="font-serif text-xl font-bold text-brand-text mb-4 border-b border-brand-line pb-3 flex items-center gap-3">
+                        <span class="text-3xl">💵</span> 2. 超現金主義とATMキャッシング
+                    </h3>
+                    <ul class="text-sm text-brand-muted leading-relaxed font-medium list-disc list-inside space-y-2 text-justify-custom">
+                        <li>ローカル食堂、タクシー、観光地の入場料など、ほぼ全てが<strong>現金（ネパールルピー）決済</strong>です。</li>
+                        <li>日本円からの現金両替はレートが悪いため、<strong>クレジットカードを利用して現地のATMでキャッシングする</strong>のが最もお得で安全な1択です。</li>
+                        <li>ATM操作時、DCC（自国通貨での決済提案）画面が出たら、必ず<strong>「Without Conversion（現地通貨決済）」</strong>を選択してください。</li>
+                    </ul>
+                </div>
+
+                <!-- Info 3 -->
+                <div class="bg-brand-base p-8 border border-brand-line rounded-xl shadow-sm reveal">
+                    <h3 class="font-serif text-xl font-bold text-brand-text mb-4 border-b border-brand-line pb-3 flex items-center gap-3">
+                        <span class="text-3xl">📱</span> 3. 脆弱なインフラと交通のハック
+                    </h3>
+                    <ul class="text-sm text-brand-muted leading-relaxed font-medium list-disc list-inside space-y-2 text-justify-custom">
+                        <li>慢性的な電力不足のため、ホテルでも<strong>急な停電（計画停電）が頻発</strong>します。大容量のモバイルバッテリーは常に持ち歩いてください。</li>
+                        <li>流しのタクシーはメーターを使わず、外国人には高額な料金をふっかけてきます。</li>
+                        <li>交渉のストレスを避け、適正価格で安全に移動するために、配車アプリ<strong>「Pathao（パタオ）」</strong>を現地到着後に必ずダウンロードし、登録・活用してください。</li>
+                    </ul>
+                </div>
+
+                <!-- Info 4 -->
+                <div class="bg-brand-base p-8 border border-brand-line rounded-xl shadow-sm reveal" style="transition-delay: 0.1s;">
+                    <h3 class="font-serif text-xl font-bold text-brand-text mb-4 border-b border-brand-line pb-3 flex items-center gap-3">
+                        <span class="text-3xl">🌦️</span> 4. 9月の気候と宗教的マナー
+                    </h3>
+                    <ul class="text-sm text-brand-muted leading-relaxed font-medium list-disc list-inside space-y-2 text-justify-custom">
+                        <li>9月下旬は雨季明けでスコールの可能性があるため、<strong>透湿性の高いレインウェアと折りたたみ傘</strong>が必須。ポカラ等の自然エリアでは「ヒル（吸血蛭）」にも注意。</li>
+                        <li>朝晩は冷え込むため、フリースや薄手のダウン等の防寒着を持参し、重ね着で対応を。</li>
+                        <li>食事の際、<strong>左手は「不浄の手」</strong>とされています。物の受け渡しや食事は右手を使うこと。また、子供の頭は神聖な場所とされるため撫でてはいけません。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BUDGET (想定旅費)
+    =========================================== -->
+    <section class="py-24 bg-brand-base border-t border-brand-line">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 border-b border-brand-line pb-4 reveal">
+                <span class="font-en text-brand-gold tracking-widest text-sm font-bold uppercase block mb-1">Chapter 03</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-text">想定旅費（概算）</h2>
+                <p class="text-xs text-brand-muted mt-2 font-medium">※1名様あたり（1NPR = 約1.1円 / 予約時期や為替により変動します）</p>
+            </div>
+
+            <div class="bg-white border border-brand-line rounded-xl shadow-soft reveal">
+                <div class="overflow-x-auto p-6 md:p-8">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b-2 border-brand-text">
+                                <th class="py-4 px-2 md:px-4 font-serif text-lg font-bold text-brand-text w-1/4">費目</th>
+                                <th class="py-4 px-2 md:px-4 font-serif text-lg font-bold text-brand-text w-1/2">詳細・内訳</th>
+                                <th class="py-4 px-2 md:px-4 font-serif text-lg font-bold text-brand-text text-right whitespace-nowrap w-1/4">金額 (JPY)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-brand-line text-sm md:text-base text-brand-muted font-medium">
+                            <tr class="hover:bg-brand-base transition-colors">
+                                <td class="py-5 px-2 md:px-4 text-brand-text font-bold">国際線航空券</td>
+                                <td class="py-5 px-2 md:px-4">羽田 ⇔ カトマンズ（デリー経由・エアインディア）</td>
+                                <td class="py-5 px-2 md:px-4 text-right font-en text-lg text-brand-text">¥125,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-base transition-colors">
+                                <td class="py-5 px-2 md:px-4 text-brand-text font-bold">国内線航空券</td>
+                                <td class="py-5 px-2 md:px-4">カトマンズ ⇔ ポカラ 往復</td>
+                                <td class="py-5 px-2 md:px-4 text-right font-en text-lg text-brand-text">¥30,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-base transition-colors">
+                                <td class="py-5 px-2 md:px-4 text-brand-text font-bold">宿泊費</td>
+                                <td class="py-5 px-2 md:px-4">4泊分（1泊約7,000円想定・温水シャワー完備）</td>
+                                <td class="py-5 px-2 md:px-4 text-right font-en text-lg text-brand-text">¥28,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-base transition-colors">
+                                <td class="py-5 px-2 md:px-4 text-brand-text font-bold">食費</td>
+                                <td class="py-5 px-2 md:px-4">6日間（約3,000円〜4,000円/日。中級レストラン中心）</td>
+                                <td class="py-5 px-2 md:px-4 text-right font-en text-lg text-brand-text">¥20,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-base transition-colors">
+                                <td class="py-5 px-2 md:px-4 text-brand-text font-bold">交通費</td>
+                                <td class="py-5 px-2 md:px-4">空港送迎、市内移動（配車アプリPathao利用等）</td>
+                                <td class="py-5 px-2 md:px-4 text-right font-en text-lg text-brand-text">¥10,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-base transition-colors">
+                                <td class="py-5 px-2 md:px-4 text-brand-text font-bold">その他諸経費</td>
+                                <td class="py-5 px-2 md:px-4">観光入場料、ビザ代(30USD)、通信費(SIM)、チップ等</td>
+                                <td class="py-5 px-2 md:px-4 text-right font-en text-lg text-brand-text">¥14,500</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="border-t-4 border-brand-text bg-[#F3F4F6]">
+                                <td colspan="2" class="py-6 px-2 md:px-4 text-right font-serif text-xl font-bold text-brand-text">合計目安</td>
+                                <td class="py-6 px-2 md:px-4 text-right text-3xl font-bold font-en text-brand-accent tracking-wide">¥227,500</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#111111] text-white text-center py-20 border-t-4 border-brand-accent">
+        <h2 class="font-en text-xl md:text-2xl tracking-[0.4em] uppercase mb-4 font-bold text-brand-gold">A Journey to Nepal</h2>
+        <p class="text-sm font-serif tracking-widest font-medium text-gray-300">生と死、そして絶景を巡る旅</p>
+    </footer>
+
+    <!-- Intersection Observer for Scroll Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // 一度表示されたら監視を終了
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
